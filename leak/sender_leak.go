@@ -1,4 +1,4 @@
-package main
+package leak
 
 import (
 	"context"
@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func senderLeak() {
+func SenderLeak() {
 	// Capture starting number of goroutines.
 	startingGs := runtime.NumGoroutine()
 

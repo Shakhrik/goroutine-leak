@@ -1,9 +1,11 @@
 package main
 
+import "goroutine-leak/leak"
+
 func main() {
 	// Sender leak
-	// senderLeak()
+	leak.SenderLeak()
 
 	// Receiver leak
-	receiverLeak()
+	leak.ReceiverLeak()
 }
