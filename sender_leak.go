@@ -9,8 +9,7 @@ import (
 	"time"
 )
 
-func main() {
-
+func senderLeak() {
 	// Capture starting number of goroutines.
 	startingGs := runtime.NumGoroutine()
 

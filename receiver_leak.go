@@ -5,11 +5,10 @@ import (
 	"time"
 )
 
-func main() {
+func receiverLeak() {
 	processRecords([]string{"record1", "record2", "record3", "record4", "record5"}, 3)
 	time.Sleep(2 * time.Second)
 }
-
 func processRecords(list []string, workers int) {
 	ch := make(chan string, len(list))
 	for _, item := range list {
@@ -23,5 +22,5 @@ func worker(input <-chan string) {
 	for item := range input {
 		fmt.Println("item received", item)
 	}
-	fmt.Printf("[worker]: shutting down\n")
+	fmt.Println("[worker]: shutting down")
 }
